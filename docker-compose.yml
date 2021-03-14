@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  bbstatsy:
+    build: .
+    restart: unless-stopped
+    init: true
+    security_opt: 
+      - seccomp=chrome.json
+    volumes:
+      - /bbstatsy/node_modules
+      - /bbstatsy/.yarn-cache
