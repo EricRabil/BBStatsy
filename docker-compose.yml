@@ -4,6 +4,8 @@ services:
   bbstatsy:
     build: .
     restart: unless-stopped
+    env_file:
+      - .env
     init: true
     security_opt: 
       - seccomp=chrome.json
